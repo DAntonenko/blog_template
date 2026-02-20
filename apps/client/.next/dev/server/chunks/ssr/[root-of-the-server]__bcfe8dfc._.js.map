@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///home/danton/GitProjects/blog_template/apps/client/app/login/page.tsx"],"sourcesContent":["export default async function LoginPage({\n  searchParams,\n}: {\n  searchParams: Promise<{ error?: string }>;\n}) {\n  const params = await searchParams;\n\n  return (\n    <form method=\"POST\" action=\"/api/auth/login\">\n      {params.error && (\n        <p style={{ color: \"red\" }}>Invalid login or password</p>\n      )}\n\n      <input name=\"email\" />\n      <input name=\"password\" type=\"password\" />\n      <button type=\"submit\">Login</button>\n    </form>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,eAAe,UAAU,EACtC,YAAY,EAGb;IACC,MAAM,SAAS,MAAM;IAErB,qBACE,ycAAC;QAAK,QAAO;QAAO,QAAO;;YACxB,OAAO,KAAK,kBACX,ycAAC;gBAAE,OAAO;oBAAE,OAAO;gBAAM;0BAAG;;;;;;0BAG9B,ycAAC;gBAAM,MAAK;;;;;;0BACZ,ycAAC;gBAAM,MAAK;gBAAW,MAAK;;;;;;0BAC5B,ycAAC;gBAAO,MAAK;0BAAS;;;;;;;;;;;;AAG5B"}}]
+}

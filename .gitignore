@@ -30,8 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files are committing because this is TEMPLATE project
+# don't forget to exclude env files from committing in real projects
+# .env*
 
 # vercel
 .vercel
