@@ -18,12 +18,14 @@ export function AdminPostsList({ posts }: { posts: Post[] }) {
             key={post.id}
             onClick={() => handlePostClick(post.id)}
           >
-            {post.title}
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+            <small>{new Date(post.createdAt).toLocaleString()}</small>
           </li>
         ))}
       </ul>
 
-      <a href="/">Back to homepage</a>
+      <a href="/">Back to Homepage</a>
 
     </main>
   );

@@ -33,7 +33,7 @@ export default async function AdminPage() {
         <button type="submit">Logout</button>
       </form>
 
-      <a href="/">Back to homepage</a>
+      <a href="/">Back to Homepage</a>
     </main>
   );
 }

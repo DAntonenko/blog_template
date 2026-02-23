@@ -62,7 +62,7 @@ export default function ClientPage() {
         ))}
       </ul>
 
-      <a href="/">Back to homepage</a>
+      <a href="/">Back to Homepage</a>
     </main>
   );
 }

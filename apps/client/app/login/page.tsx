@@ -17,7 +17,7 @@ export default async function LoginPage({
         <button type="submit">Login</button>
       </form>
       
-      <a href="/">Back to homepage</a>
+      <a href="/">Back to Homepage</a>
     </main>
   );
 }

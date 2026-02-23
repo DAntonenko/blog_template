@@ -59,7 +59,7 @@ export default async function EditPostPage({
         </button>
       </form>
 
-      <a href="/">Back to homepage</a>
+      <a href="/">Back to Homepage</a>
     </main>
   );
 }

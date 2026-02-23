@@ -65,16 +65,23 @@
 //   );
 // }
 
-export default function Home() {
+import { getCurrentUser } from "@/shared/auth/getCurrentUser";
+
+export default async function Home() {
+
+  const user = await getCurrentUser();
 
   return (
     <main>
       <h1>Home Page</h1>
+      {user && <p>Welcome, {user.role}!</p>}
       <nav>
         <ul>
           <li><a href="/client_page">Client Page</a></li>
           <li><a href="/blog">Blog</a></li>
-          <li><a href="/login">Login</a></li>
+          {!user && <li><a href="/login">Login</a></li>}
+          {user && <li><a href="/admin">Admin/Create post</a></li>}
+          {user && <li><a href="/admin/posts">Edit post</a></li>}
         </ul>
       </nav>
     </main>

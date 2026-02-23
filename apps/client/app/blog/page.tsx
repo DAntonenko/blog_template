@@ -14,12 +14,18 @@ export default async function Blog() {
           <li key={post.id}>
             <h3>{post.title}</h3>
             <p>{post.content}</p>
-            <small>{new Date(post.createdAt).toLocaleString()}</small>
+            <small>
+              {new Date(post.createdAt).toLocaleDateString('en-EN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+              })}
+            </small>
           </li>
         ))}
       </ul>
       
-      <a href="/">Back to homepage</a>
+      <a href="/">Back to Homepage</a>
     </main>
   );
 }
