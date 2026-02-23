@@ -2,8 +2,11 @@
 
 import type { Post } from "@apps/contracts";
 import { useEffect, useState } from "react";
+import { useCurrentUser } from "@/shared/auth/auth-context";
 
 export default function ClientPage() {
+  const user = useCurrentUser();
+
   const [count, setCount] = useState<number>(0);
   
   const [posts, setPosts] = useState<Post[] | []>([]);
@@ -46,6 +49,7 @@ export default function ClientPage() {
   return (
     <main>
       <h1>Client Component</h1>
+      {user ? <p>Welcome, {user.role}!</p> : <p>You are not logged in</p>}
       <p>Count: {count}</p>
       <button onClick={() => setCount(prev => prev + 1)}>Increment</button>
 
