@@ -36,26 +36,30 @@ export default async function EditPostPage({
   const post = await getPost(id);
 
   return (
-    <form action={updatePost.bind(null, id)}>
-      <div>
-        <input
-          name="title"
-          defaultValue={post.title}
-          placeholder="Title"
-        />
-      </div>
+    <main>
+      <form action={updatePost.bind(null, id)}>
+        <div>
+          <input
+            name="title"
+            defaultValue={post.title}
+            placeholder="Title"
+          />
+        </div>
 
-      <div>
-        <textarea
-          name="content"
-          defaultValue={post.content}
-          placeholder="Content"
-        />
-      </div>
+        <div>
+          <textarea
+            name="content"
+            defaultValue={post.content}
+            placeholder="Content"
+          />
+        </div>
 
-      <button type="submit">
-        Save
-      </button>
-    </form>
+        <button type="submit">
+          Save
+        </button>
+      </form>
+
+      <a href="/">Back to homepage</a>
+    </main>
   );
 }

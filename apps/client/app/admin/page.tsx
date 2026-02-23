@@ -1,9 +1,7 @@
-import { getCurrentUser } from "../../shared/auth/getCurrentUser"; // why not "@/shared/auth/getCurrentUser"?
+import { getCurrentUser } from "@/shared/auth/getCurrentUser";
 import { createPost } from "./actions";
 
 export default async function AdminPage() {
-  // rem
-  console.log("ADMIN PAGE");
 
   const user = await getCurrentUser();
 
@@ -34,6 +32,8 @@ export default async function AdminPage() {
       <form method="POST" action="/api/auth/logout">
         <button type="submit">Logout</button>
       </form>
+
+      <a href="/">Back to homepage</a>
     </main>
   );
 }

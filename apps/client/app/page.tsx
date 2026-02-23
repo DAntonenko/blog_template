@@ -65,23 +65,18 @@
 //   );
 // }
 
-"use client";
-
-import { useState, useEffect } from "react";
-
 export default function Home() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/health")
-      .then(res => res.json())
-      .then(setData);
-  }, []);
 
   return (
-    <div>
-      <h1>Glagne!</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
+    <main>
+      <h1>Home Page</h1>
+      <nav>
+        <ul>
+          <li><a href="/client_page">Client Page</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </nav>
+    </main>
   );
 }

@@ -11,15 +11,20 @@ export function AdminPostsList({ posts }: { posts: Post[] }) {
   };
 
   return (
-    <ul>
-      {posts.map(post => (
-        <li
-          key={post.id}
-          onClick={() => handlePostClick(post.id)}
-        >
-          {post.title}
-        </li>
-      ))}
-    </ul>
+    <main>
+      <ul>
+        {posts.map(post => (
+          <li
+            key={post.id}
+            onClick={() => handlePostClick(post.id)}
+          >
+            {post.title}
+          </li>
+        ))}
+      </ul>
+
+      <a href="/">Back to homepage</a>
+
+    </main>
   );
 }

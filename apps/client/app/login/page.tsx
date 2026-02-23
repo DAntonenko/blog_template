@@ -6,14 +6,18 @@ export default async function LoginPage({
   const params = await searchParams;
 
   return (
-    <form method="POST" action="/api/auth/login">
-      {params.error && (
-        <p>Invalid login or password</p>
-      )}
+    <main>
+      <form method="POST" action="/api/auth/login">
+        {params.error && (
+          <p>Invalid login or password</p>
+        )}
 
-      <input name="email" />
-      <input name="password" type="password" />
-      <button type="submit">Login</button>
-    </form>
+        <input name="email" />
+        <input name="password" type="password" />
+        <button type="submit">Login</button>
+      </form>
+      
+      <a href="/">Back to homepage</a>
+    </main>
   );
 }
