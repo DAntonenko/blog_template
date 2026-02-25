@@ -4,6 +4,9 @@ import type { Post } from "@apps/contracts";
 import { useEffect, useState } from "react";
 import { useCurrentUser } from "@/shared/auth/auth-context";
 
+import {useLocale} from "next-intl";
+import {useTranslations} from "next-intl";
+
 export default function ClientPage() {
   const user = useCurrentUser();
 
@@ -46,10 +49,15 @@ export default function ClientPage() {
     };
   }, []);
 
+  const locale = useLocale();
+  const t = useTranslations("ClientPage");
+
   return (
     <main>
       <h1>Client Component</h1>
+      <h2>{t('title')}</h2>
       {user ? <p>Welcome, {user.role}!</p> : <p>You are not logged in</p>}
+      <p>Current locale: {locale}</p>
       <p>Count: {count}</p>
       <button onClick={() => setCount(prev => prev + 1)}>Increment</button>
 

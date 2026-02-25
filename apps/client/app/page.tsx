@@ -66,21 +66,21 @@
 // }
 
 import { getCurrentUser } from "@/shared/auth/getCurrentUser";
+import {getLocale} from 'next-intl/server';
 import {getTranslations} from "next-intl/server";
 
-export default async function Home() {
+export default async function HomePage() {
 
   const user = await getCurrentUser();
 
-  const t = await getTranslations({
-    locale: "en",
-    namespace: "Home"
-  });
+  const locale = await getLocale();
+  const t = await getTranslations("HomePage");
 
   return (
     <main>
       <h1>{t("title")}</h1>
       {user && <p>Welcome, {user.role}!</p>}
+      <p>Current locale: {locale}</p>
       <nav>
         <ul>
           <li><a href="/client_page">Client Page</a></li>

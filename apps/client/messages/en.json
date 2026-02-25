@@ -1,5 +1,14 @@
 {
-  "Home": {
+  "Metadata": {
+    "title": "Blog Template",
+    "description": "A blog template for development into a masterpiece :)",
+    "siteName": "Blog Template"
+  },
+  "HomePage": {
     "title": "Home Page"
+  },
+
+  "ClientPage": {
+    "title": "Client Page"
   }
 }
