@@ -32,7 +32,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "../contracts/src/LocaleLanguages.ts"  ],
   "references": [
     { "path": "../contracts" }
   ],

@@ -6,6 +6,7 @@ import { AuthProvider } from "@/shared/auth/auth-context";
 // internationalization
 import {NextIntlClientProvider} from "next-intl";
 import {getLocale, getMessages, getTranslations} from "next-intl/server";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
 
 import "./globals.css";
 
@@ -82,6 +83,7 @@ export default async function RootLayout({
           messages={messages}
         >
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            <LanguageSwitcher />
             {children}
           </body>
         </NextIntlClientProvider>
