@@ -28,12 +28,6 @@ export default async function AdminPage() {
         </div>
         <button type="submit">Create post</button>
       </form>
-
-      <form method="POST" action="/api/auth/logout">
-        <button type="submit">Logout</button>
-      </form>
-
-      <a href="/">Back to Homepage</a>
     </main>
   );
 }

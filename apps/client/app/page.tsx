@@ -66,7 +66,7 @@
 // }
 
 import { getCurrentUser } from "@/shared/auth/getCurrentUser";
-import {getLocale} from 'next-intl/server';
+import {getLocale} from "next-intl/server";
 import {getTranslations} from "next-intl/server";
 
 export default async function HomePage() {
@@ -79,15 +79,15 @@ export default async function HomePage() {
   return (
     <main>
       <h1>{t("title")}</h1>
-      {user && <p>Welcome, {user.role}!</p>}
-      <p>Current locale: {locale}</p>
+      {user && <p>{t("greeting")}, {user.role}!</p>}
+      <p>{t("currentLocale")}: {locale}</p>
       <nav>
         <ul>
-          <li><a href="/client_page">Client Page</a></li>
-          <li><a href="/blog">Blog</a></li>
-          {!user && <li><a href="/login">Login</a></li>}
-          {user && <li><a href="/admin">Admin/Create post</a></li>}
-          {user && <li><a href="/admin/posts">Edit post</a></li>}
+          <li><a href="/client_page">{t("clientPage")}</a></li>
+          <li><a href="/blog">{t("blog")}</a></li>
+          {!user && <li><a href="/login">{t("login")}</a></li>}
+          {user && <li><a href="/admin">{t("admin")}</a></li>}
+          {user && <li><a href="/admin/posts">{t("editPost")}</a></li>}
         </ul>
       </nav>
     </main>

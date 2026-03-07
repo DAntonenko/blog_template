@@ -30,13 +30,19 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files are committing because this is TEMPLATE project
-# don't forget to exclude env files from committing in real projects
-# .env*
-
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local env files
+
+# env files are committing because this is TEMPLATE project
+# don't forget to exclude env files from committing in real projects
+# .env*
+
+# db
+/apps/server/backups/
+/apps/server/data/blog.db

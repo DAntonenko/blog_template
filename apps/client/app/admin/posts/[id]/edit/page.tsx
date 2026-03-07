@@ -58,8 +58,6 @@ export default async function EditPostPage({
           Save
         </button>
       </form>
-
-      <a href="/">Back to Homepage</a>
     </main>
   );
 }

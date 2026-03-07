@@ -1,11 +1,14 @@
 import { getPosts } from "@/shared/api/posts";
+import {getTranslations} from "next-intl/server";
 
 export default async function Blog() {
   const posts = await getPosts();
 
+  const t = await getTranslations("Blog");
+
   return (
     <main>
-      <h1>Blog</h1>
+      <h1>{t("title")}</h1>
 
       {posts.length === 0 && <p>No posts yet</p>}
 
@@ -24,8 +27,6 @@ export default async function Blog() {
           </li>
         ))}
       </ul>
-      
-      <a href="/">Back to Homepage</a>
     </main>
   );
 }

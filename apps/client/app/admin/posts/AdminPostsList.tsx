@@ -24,9 +24,6 @@ export function AdminPostsList({ posts }: { posts: Post[] }) {
           </li>
         ))}
       </ul>
-
-      <a href="/">Back to Homepage</a>
-
     </main>
   );
 }
