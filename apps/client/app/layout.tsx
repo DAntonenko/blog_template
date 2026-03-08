@@ -6,7 +6,8 @@ import { AuthProvider } from "@/shared/auth/auth-context";
 // internationalization
 import {NextIntlClientProvider} from "next-intl";
 import {getLocale, getMessages, getTranslations} from "next-intl/server";
-import { LanguageSwitcher } from "@/components/UI/LanguageSwitcher/LanguageSwitcher";
+
+import { Header } from "@/components/layout/Header/Header";
 
 import "./globals.css";
 
@@ -70,8 +71,6 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages();
 
-  const t = await getTranslations("Layout");
-
   return (
     <html lang={locale}>
       <AuthProvider user={user}>
@@ -80,14 +79,8 @@ export default async function RootLayout({
           messages={messages}
         >
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
-            <LanguageSwitcher />
+            <Header />
             {children}
-            <a href="/">{t("backToHomepage")}</a>
-            {user &&
-              <form method="POST" action="/api/auth/logout">
-                <button type="submit">{t("logout")}</button>
-              </form>
-            }
           </body>
         </NextIntlClientProvider>
       </AuthProvider>

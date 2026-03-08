@@ -4,21 +4,20 @@
     "description": "Шаблон блога для развития в шедевр :)",
     "siteName": "Блог Шаблон"
   },
-  "Layout": {
-    "backToHomepage": "Вернуться на главную страницу",
-    "logout": "Выйти"
-  },
-  "HomePage": {
-    "title": "Главная Страница",
-    "greeting": "Привет",
-    "currentLocale": "Выбран язык",
+  "Header": {
+    "homepage": "Главная страница",
     "clientPage": "Клиентская страница",
     "blog": "Блог",
     "login": "Логин",
     "admin": "Админ/Создать пост",
-    "editPost": "Редактировать пост"
+    "editPost": "Редактировать пост",
+    "logout": "Выйти"
   },
-
+  "HomePage": {
+    "title": "Главная",
+    "greeting": "Привет",
+    "currentLocale": "Выбран язык"
+  },
   "ClientPage": {
     "title": "Клиентская Страница"
   },

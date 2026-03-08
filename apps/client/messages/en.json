@@ -4,19 +4,19 @@
     "description": "A blog template for development into a masterpiece :)",
     "siteName": "Blog Template"
   },
-  "Layout": {
-    "backToHomepage": "Back to Homepage",
+  "Header": {
+    "homepage": "Homepage",
+    "clientPage": "Client Page",
+    "blog": "Blog",
+    "login": "Login",
+    "admin": "Admin/Create post",
+    "editPost": "Edit post",
     "logout": "Logout"
   },
   "HomePage": {
     "title": "Home Page",
     "greeting": "Welcome",
-    "currentLocale": "Current locale",
-    "clientPage": "Client Page",
-    "blog": "Blog",
-    "login": "Login",
-    "admin": "Admin/Create post",
-    "editPost": "Edit post"
+    "currentLocale": "Current locale"
   },
   "ClientPage": {
     "title": "Client Page"

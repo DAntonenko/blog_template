@@ -82,15 +82,6 @@ export default async function HomePage() {
         <h1>{t("title")}</h1>
         {user && <p>{t("greeting")}, {user.role}!</p>}
         <p>{t("currentLocale")}: {locale}</p>
-        <nav>
-          <ul>
-            <li><a href="/client_page">{t("clientPage")}</a></li>
-            <li><a href="/blog">{t("blog")}</a></li>
-            {!user && <li><a href="/login">{t("login")}</a></li>}
-            {user && <li><a href="/admin">{t("admin")}</a></li>}
-            {user && <li><a href="/admin/posts">{t("editPost")}</a></li>}
-          </ul>
-        </nav>
       </section>
       <Image
         className={styles.goga}
