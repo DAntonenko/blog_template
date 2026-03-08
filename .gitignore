@@ -45,5 +45,5 @@ next-env.d.ts
 
 # db
 /apps/server/backups/
-/apps/server/blog.db
-/apps/server/blog.db.before-restore
+*.db
+*.db.before-restore
