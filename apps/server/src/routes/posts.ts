@@ -2,6 +2,7 @@ import { Router } from "express";
 import { db } from "../db";
 import { requireAuth } from "../middleware/requireAuth";
 import crypto from "node:crypto";
+import { createBackup } from "../backup/createBackup";
 
 export const postsRouter = Router();
 
@@ -24,6 +25,12 @@ postsRouter.post("/", requireAuth, (req, res) => {
     req.user!.id,               // !
     new Date().toISOString()
   );
+
+  try {
+    createBackup();
+  } catch (err) {
+    console.error("Backup failed:", err);
+  }
 
   res.status(201).json({
     id,
@@ -90,6 +97,12 @@ postsRouter.put("/:id", requireAuth, (req, res) => {
     SET title = ?, content = ?
     WHERE id = ?
   `).run(title, content, id);
+
+  try {
+    createBackup();
+  } catch (err) {
+    console.error("Backup failed:", err);
+  }
 
   res.json({ ok: true });
 });
