@@ -1,9 +1,13 @@
 import { getCurrentUser } from "@/shared/auth/getCurrentUser";
 import { createPost } from "./actions";
+import { getTranslations } from "next-intl/server";
+import { SubmitFormButton } from "@/components/UI/SubmitFormButton/SubmitFormButton";
 
 export default async function AdminPage() {
 
   const user = await getCurrentUser();
+
+  const t = await getTranslations("CreatePostPage");
 
   return (
     <main>
@@ -26,7 +30,10 @@ export default async function AdminPage() {
             <textarea name="content" />
           </label>
         </div>
-        <button type="submit">Create post</button>
+        <SubmitFormButton
+          idleText={t("createText")}
+          pendingText={t("createPendingText")}
+        />
       </form>
     </main>
   );

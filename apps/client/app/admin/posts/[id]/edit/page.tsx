@@ -1,7 +1,8 @@
 import type { Post } from "@apps/contracts";
 import { headers } from "next/headers";
 import { updatePost, deletePost } from "../actions";
-import { DeletePostButton } from "@/components/UI/DeletePostButton/DeletePostButton";
+import { getTranslations } from "next-intl/server";
+import { SubmitFormButton } from "@/components/UI/SubmitFormButton/SubmitFormButton";
 
 async function getPost(id: string): Promise<Post> {
   const h = await headers();
@@ -36,6 +37,8 @@ export default async function EditPostPage({
 
   const post = await getPost(id);
 
+  const t = await getTranslations("EditPostPage");
+
   return (
     <main>
       <form action={updatePost.bind(null, id)}>
@@ -55,13 +58,19 @@ export default async function EditPostPage({
           />
         </div>
 
-        <button type="submit">
-          Save
-        </button>
+        <SubmitFormButton
+          idleText={t("saveText")}
+          pendingText={t("savePendingText")}
+          confirmText={t("saveConfirmText")}
+        />
       </form>
 
       <form action={deletePost.bind(null, id)}>
-        <DeletePostButton />
+        <SubmitFormButton
+          idleText={t("deleteText")}
+          pendingText={t("deletePendingText")}
+          confirmText={t("deleteConfirmText")}
+        />
       </form>
     </main>
   );

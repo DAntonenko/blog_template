@@ -24,8 +24,16 @@
   "Blog": {
     "title": "Blog"
   },
-  "DeletePostButton": {
-    "buttonText": "Delete post",
-    "confirmText": "Delete this post?"
+  "CreatePostPage": {
+    "createText": "Create post",
+    "createPendingText": "Creating..."
+  },
+  "EditPostPage": {
+    "saveText": "Save post",
+    "savePendingText": "Saving...",
+    "saveConfirmText": "Save this post?",
+    "deleteText": "Delete post",
+    "deletePendingText": "Deleting...",
+    "deleteConfirmText": "Delete this post?"
   }
 }
