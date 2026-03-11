@@ -23,5 +23,9 @@
   },
   "Blog": {
     "title": "Блог"
+  },
+  "DeletePostButton": {
+    "buttonText": "Удалить пост",
+    "confirmText": "Удалить этот пост?"
   }
 }

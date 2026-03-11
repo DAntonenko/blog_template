@@ -106,3 +106,31 @@ postsRouter.put("/:id", requireAuth, (req, res) => {
 
   res.json({ ok: true });
 });
+
+postsRouter.delete("/:id", requireAuth, (req, res) => {
+  const { id } = req.params;
+
+  const post = db
+    .prepare(`SELECT authorId FROM posts WHERE id = ?`)
+    .get(id) as { authorId: string } | undefined;
+
+  if (!post) {
+    return res.status(404).json({ error: "Post not found" });
+  }
+
+  if (!id) {
+    return res.status(400).json({ error: "Invalid id" });
+  }
+
+  // only author or admin
+  if (
+    post.authorId !== req.user!.id &&
+    req.user!.role !== "admin"
+  ) {
+    return res.status(403).json({ error: "Forbidden" });
+  }
+
+  db.prepare(`DELETE FROM posts WHERE id = ?`).run(id);
+
+  res.json({ ok: true });
+});

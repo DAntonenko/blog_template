@@ -23,5 +23,9 @@
   },
   "Blog": {
     "title": "Blog"
+  },
+  "DeletePostButton": {
+    "buttonText": "Delete post",
+    "confirmText": "Delete this post?"
   }
 }

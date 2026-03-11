@@ -1,6 +1,7 @@
 import type { Post } from "@apps/contracts";
 import { headers } from "next/headers";
-import { updatePost } from "../actions";
+import { updatePost, deletePost } from "../actions";
+import { DeletePostButton } from "@/components/UI/DeletePostButton/DeletePostButton";
 
 async function getPost(id: string): Promise<Post> {
   const h = await headers();
@@ -57,6 +58,10 @@ export default async function EditPostPage({
         <button type="submit">
           Save
         </button>
+      </form>
+
+      <form action={deletePost.bind(null, id)}>
+        <DeletePostButton />
       </form>
     </main>
   );

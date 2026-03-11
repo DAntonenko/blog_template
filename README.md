@@ -2,17 +2,17 @@
 
 use Node 20 (nvm use 20), because Node 21 cannot bundle every necessary libs, at least now (February 2026)
 
-pnpm install
-pnpm dev
-pnpm backup
-pnpm restore (+ filename from /apps/server/backups)
+* pnpm install
+* pnpm dev
+* pnpm backup
+* pnpm restore (+ filename from /apps/server/backups)
 
-[http://localhost:3000](http://localhost:3000) - frontend
-[http://localhost:3000](http://localhost:4000) - backend
+* [http://localhost:3000](http://localhost:3000) - frontend
+* [http://localhost:4000](http://localhost:4000) - backend
 
 ## For real project
 
-* Don't forget to exclude env files from committing in .gitignore
+* **Don't forget** to exclude **env** files from committing in .gitignore
 
 ## Deploy on Vercel
 

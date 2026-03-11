@@ -53,17 +53,17 @@ export async function createBackup() {
 }
 
 function cleanupOldBackups() {
-    console.log("Cleaning old backups");
-    const files = fs
-      .readdirSync(BACKUP_DIR)
-      .filter(f => f.endsWith(".db"))
-      .sort()
-      .reverse();
+  console.log("Cleaning old backups");
+  const files = fs
+    .readdirSync(BACKUP_DIR)
+    .filter(f => f.endsWith(".db"))
+    .sort()
+    .reverse();
 
-    const MAX_BACKUPS = 10;
+  const MAX_BACKUPS = 10;
 
-    files.slice(MAX_BACKUPS).forEach(file => {
-      fs.unlinkSync(path.join(BACKUP_DIR, file));
-    });
-  }
+  files.slice(MAX_BACKUPS).forEach(file => {
+    fs.unlinkSync(path.join(BACKUP_DIR, file));
+  });
+}
   

@@ -39,3 +39,27 @@ export async function updatePost(id: string, formData: FormData) {
 
   redirect("/admin");
 }
+
+export async function deletePost(id: string) {
+  const h = await headers();
+
+  const host = h.get("host");
+  const protocol =
+    process.env.NODE_ENV === "production" ? "https" : "http";
+
+  const res = await fetch(
+    `${protocol}://${host}/api/posts/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        cookie: h.get("cookie") ?? "",
+      },
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to delete post");
+  }
+
+  redirect("/admin/posts");
+}
