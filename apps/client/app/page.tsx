@@ -2,8 +2,8 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 import { getCurrentUser } from "@/shared/auth/getCurrentUser";
-import {getLocale} from "next-intl/server";
-import {getTranslations} from "next-intl/server";
+import { getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 export default async function HomePage() {
 
@@ -20,7 +20,6 @@ export default async function HomePage() {
         <p>{t("currentLocale")}: {locale}</p>
       </section>
       <Image
-        className={styles.goga}
         src="/images/content/content.jpg"
         alt="Content image"
         width={503}

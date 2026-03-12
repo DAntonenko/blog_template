@@ -4,8 +4,8 @@ import { getCurrentUser } from "@/shared/auth/getCurrentUser";
 import { AuthProvider } from "@/shared/auth/auth-context";
 
 // internationalization
-import {NextIntlClientProvider} from "next-intl";
-import {getLocale, getMessages, getTranslations} from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
 
 import { Header } from "@/components/layout/Header/Header";
 
